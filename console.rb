@@ -2,13 +2,20 @@ require('pry')
 require_relative('./models/album.rb')
 require_relative('./models/artist.rb')
 
-# Album.delete_all()
-# Artist.delete_all()
+Album.delete_all()
+Artist.delete_all()
 
 artist_1 = Artist.new({'name' => 'Prince'})
 artist_2 = Artist.new({'name' => 'John Lennon'})
+artist_3 = Artist.new({'name' => 'John Travolta'})
+
 artist_1.save()
 artist_2.save()
+artist_3.save()
+
+artist_2.name = 'John Legend'
+# artist_2.update()
+#artist_3.delete()
 
 all_artists = Artist.all()
 
@@ -32,6 +39,11 @@ album_3 = Album.new({
   'genre'=> 'Pop'
 })
 album_3.save()
+
+album_3.title = 'Velocity'
+album_3.update()
+
+album_2.delete()
 
 all_albums = Album.all()
 
