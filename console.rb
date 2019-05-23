@@ -46,6 +46,8 @@ album_3.update()
 album_2.delete()
 
 all_albums = Album.all()
+artist_by_id = Artist.find(109)
+album_by_id = Album.find(101)
 
 binding.pry
 nil
