@@ -46,6 +46,7 @@ class Album
     WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
+    return nil if results.count == 0
     album_hash = results.first
     album = Album.new(album_hash)
     return album

@@ -14,7 +14,7 @@ artist_2.save()
 artist_3.save()
 
 artist_2.name = 'John Legend'
-# artist_2.update()
+artist_2.update()
 #artist_3.delete()
 
 all_artists = Artist.all()

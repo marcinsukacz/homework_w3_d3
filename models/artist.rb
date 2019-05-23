@@ -35,7 +35,7 @@ class Artist
 
 
   def update()
-    sql = "UPDATE artists SET (name) = ($1) WHERE id = $2"
+    sql = "UPDATE artists SET name = $1 WHERE id = $2"
     values = [@name, @id]
     SqlRunner.run(sql, values)
   end
@@ -45,6 +45,7 @@ class Artist
     WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
+    return nil if results.count == 0
     artist_hash = results.first
     artist = Artist.new(artist_hash)
     return artist
